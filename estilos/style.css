@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Roboto:ital@0;1&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #faf4f4;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.informacion{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:15px;
+    font-size: 25px;
+    font-weight: 300px;
+}
+
+
+.informacion .precio {
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.informacion .precio span{
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.informacion button{
+    background-color: #c1b1b1;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+/*menu*/
+
+.menu li{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: -500px;
+}
+
+.submenu{
+    display: none ;
+    position: absolute;
+    color: rgb(7, 126, 224);
+    list-style: none;
+}
+
+.menu li:hover .submenu{
+    display: block;
+}
+
+/*nav*/
+
+nav{
+    width: 100%;
+    background-color: rgb(16, 128, 226);
+    display:flex;
+    justify-content: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    color: rgb(178, 188, 209);
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+nav ul li a:hover{
+    color: rgb(230, 234, 237);
+    background-color: rgb(16, 128, 226);
+}
+
+/*img*/
+
+.imagenRe{
+    width: 1518px;
+    height: 650px;
+}
