@@ -5,7 +5,12 @@
 }
 
 body {
-    background-color: #faf4f4;
+    background-color: rgb(16, 128, 226);;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
 }
 
 .contenedor{
@@ -14,6 +19,7 @@ body {
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .informacion{
@@ -53,7 +59,7 @@ body {
 .menu li{
     position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 200px;
     margin-top: -500px;
 }
 
@@ -73,9 +79,8 @@ body {
 nav{
     width: 100%;
     background-color: rgb(16, 128, 226);
-    display:flex;
-    justify-content: center;
-    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 30px;
     box-sizing: border-box;
 }
 
@@ -102,7 +107,33 @@ nav ul li a:hover{
 
 /*img*/
 
-.imagenRe{
-    width: 1518px;
-    height: 650px;
+.imgPreventas{
+    gap: 100px;
+    
 }
+
+.carousel-inner {
+    width: 100%;
+    
+}
+
+.carousel-item img {
+    width: 80%;
+    max-height: 460px;
+    
+}
+
+#footer {
+    text-align: center;
+    padding-top: 290px;
+}
+
+.carrito {
+    text-align: right;
+    margin: 20px;
+    
+}
+
+/*.form {
+
+} */
