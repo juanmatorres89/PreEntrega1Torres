@@ -125,15 +125,35 @@ nav ul li a:hover{
 
 #footer {
     text-align: center;
-    padding-top: 290px;
-}
-
-.carrito {
-    text-align: right;
-    margin: 20px;
     
 }
+
 
 /*.form {
 
 } */
+
+#filter__input{
+    display: block;
+    margin: auto;
+    width: 20%;
+}
+
+.carrito {
+    display: none;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: 30%;
+    height: auto;
+    background-color: whitesmoke;
+    z-index: 1001;
+}
+
+#btnCarrito{
+    cursor: pointer;
+}
+
+.producto{
+    background-color: red;
+}
