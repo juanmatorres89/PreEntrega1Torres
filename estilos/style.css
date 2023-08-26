@@ -108,7 +108,8 @@ nav ul li a:hover{
 /*img*/
 
 .imgPreventas{
-    gap: 100px;
+    display: grid;
+    gap: 50px;
     
 }
 
@@ -150,10 +151,19 @@ nav ul li a:hover{
     z-index: 1001;
 }
 
-#btnCarrito{
+.btnCarrito{
     cursor: pointer;
+    display: flex;
+    justify-content: end;
 }
 
-.producto{
-    background-color: red;
+.userLogin{
+    display: flex;
+    justify-content: end;
+}
+
+#productosDestacados{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }

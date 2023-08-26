@@ -1,7 +1,7 @@
-export const productos = [
+const productos = [
     {id:1, img: "", name:'FIFA 23', price: 27000, stock: 15, plataform: 'PS5/PS4'},
-    {id:2, img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/ss_e80a907c2c43337e53316c71555c3c3035a1343e.1920x1080.jpg?t=1683618443", name:'ELDEN RING', price: 35000, stock: 7, plataform: 'PS5/PS4'},
-    {id:3, img: "", name:'MORTAL KOMBAT 11', price: 25000, stock: 10, plataform: 'PS5/PS4'},
+    {id:2, img: "", name:'ELDEN RING', price: 35000, stock: 7, plataform: 'PS5/PS4'},
+    {id:3, img: "", name:"MORTAL KOMBAT 11", price: 25000, stock: 10, plataform: "PS5/PS4"},
     {id:4, img: "", name:'GOD OF WAR: RAGNAROK', price: 42000, stock: 10, plataform: 'PS5/PS4'},
     {id:5, img: "", name:'CALL OF DUTY: MODERN WARFARE II', price: 40000, stock: 5, plataform: 'PS5/PS4'},
     {id:6, img: "", name:'GRAN TURISMO 7: 25 ANNIVERSARY', price: 39000, stock: 2, plataform: 'PS5'},
@@ -9,9 +9,9 @@ export const productos = [
     {id:8, img: "", name:'HORIZON FORBBIDEN WEST SPECIAL EDITION', price: 30000, stock: 4, plataform: 'PS5/PS4'},
     {id:9, img: "", name:'DEAD SPACE: REMAKE', price: 42000, stock: 8, plataform: 'PS5'},
     {id:10, img: "", name:'HOGWARTS LEGACY', price: 45000, stock: 12, plataform: 'PS5/PS4'},
-    {id:11, img: "", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
+    {id:11, img: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
     {id:12, img: "", name:'FINAL FANTASY XVI', price: 46000, stock: 13, plataform: 'PS5'},
-    {id:13, img: "", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'},
+    {id:13, img: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'},
     {id:14, img: "", name:'STREET FIGHTER 6', price: 44700, stock: 13, plataform: 'PS5'},
     {id:15, img: "", name:'SPIDERMAN MILES MORALES', price: 35100, stock: 13, plataform: 'PS5/PS4'},
     {id:16, img: "", name:'DEAD ISLAND 2', price: 47900, stock: 13, plataform: 'PS5/PS4'},
@@ -63,11 +63,25 @@ export const productos = [
     {id:62, img: "", name:'POKEMON SWORD', price: 27000, stock: 4, plataform: 'N SWITCH'},
     {id:63, img: "", name:'RESIDENT EVIL 8', price: 35000, stock: 8, plataform: 'PS5/PS4'},
     {id:64, img: "", name:'RESIDENT EVIL 7', price: 20000, stock: 7, plataform: 'PS4'},
-    {id:65, img: "", name:'PLAYSTATION 4 PRO', price: 460000, stock: 4, plataform: 'PS4'},
-    {id:66, img: "", name:'PLAYSTATION 5 STANDARD', price: 620000, stock: 5, plataform: 'PS5'},
-    {id:67, img: "", name:'XBOX SERIES S', price: 500000, stock: 3, plataform: 'XBOX'},
-    {id:68, img: "", name:'XBOX SERIES X', price: 600000, stock: 5, plataform: 'XBOX'},
-    {id:69, img: "", name:'NINTENDO SWITCH OLED', price: 400000, stock: 3, plataform: 'N SWITCH'},
+    {id:65, img: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", name:'PLAYSTATION 4 PRO', price: 460000, stock: 4, plataform: 'PS4'},
+    {id:66, img: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", name:'PLAYSTATION 5 STANDARD', price: 620000, stock: 5, plataform: 'PS5'},
+    {id:67, img: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", name:'XBOX SERIES S', price: 500000, stock: 3, plataform: 'XBOX'},
+    {id:68, img: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", name:'XBOX SERIES X', price: 600000, stock: 5, plataform: 'XBOX'},
+    {id:69, img: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", name:'NINTENDO SWITCH OLED', price: 400000, stock: 3, plataform: 'N SWITCH'}
 ]
 
 JSON.parse(localStorage.getItem("productos")) || localStorage.setItem("productos", JSON.stringify(productos));
+
+const productosDestacados = [
+    {id:65, img: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", name:'PLAYSTATION 4 PRO', price: 460000, stock: 4, plataform: 'PS4'},
+    {id:66, img: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", name:'PLAYSTATION 5 STANDARD', price: 620000, stock: 5, plataform: 'PS5'},
+    {id:67, img: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", name:'XBOX SERIES S', price: 500000, stock: 3, plataform: 'XBOX'},
+    {id:68, img: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", name:'XBOX SERIES X', price: 600000, stock: 5, plataform: 'XBOX'},
+    {id:69, img: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", name:'NINTENDO SWITCH OLED', price: 400000, stock: 3, plataform: 'N SWITCH'},
+    {id:10, img: "https://http2.mlstatic.com/D_NQ_NP_866648-MLA54972688927_042023-O.webp", name:'HOGWARTS LEGACY', price: 45000, stock: 12, plataform: 'PS5/PS4'},
+    {id:11, img: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
+    {id:13, img: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'}
+
+]
+
+JSON.parse(localStorage.getItem("productosDestacados")) || localStorage.setItem("productosDestacados", JSON.stringify(productosDestacados));

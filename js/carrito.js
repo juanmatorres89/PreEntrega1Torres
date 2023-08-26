@@ -162,25 +162,8 @@ pagoEnCuotas(15000, 2);
             };
         }); */
 
-        
-        const listaCarrito = document.getElementById("items");
-        const footCarrito = document.getElementById("totales");
-        const btnCarrito = document.getElementById("btnCarrito");
-        const carritoTable = document.getElementById("carrito");
-        
-        
-    
-        btnCarrito.addEventListener("click", () => {
-            dibujarCarrito()
-            if(carritoTable.style.display === "block"){
-                carritoTable.style.display = "none"
-            }else{
-                carritoTable.style.display = "block"
-            }
-        })
-    
         import { productosDisponibles } from "./inicio.js";
-    
+
         JSON.parse(sessionStorage.getItem("carrito")) === null && sessionStorage.setItem("carrito", JSON.stringify([]))
     
         document.addEventListener("DOMContentLoaded", () => {
@@ -188,41 +171,57 @@ pagoEnCuotas(15000, 2);
         })
     
         let carrito = JSON.parse(sessionStorage.getItem("carrito"))
+        const listaCarrito = document.getElementById("items");
+        const footCarrito = document.getElementById("totales");
+        const btnCarrito = document.getElementById("btnCarrito");
+        const carritoTable = document.getElementById("carrito");
+        
+        
+        btnCarrito.addEventListener("click", () => {
+            dibujarCarrito()
+            if(carritoTable.style.display === "block"){
+                carritoTable.style.display = "none"
+            }else{
+                carritoTable.style.display = "block"
+                dibujarCarrito()
+            }
+        })
     
         
-    
         export const comprarProducto = (idProducto) => {
             const producto = productosDisponibles.find((producto) => producto.id === idProducto)
-        }
     
-        const { name, price, img, id } = producto
     
-        const productoCarrito = carrito.find((producto) => producto.id === idProducto)
+            const { name, price, img, id } = producto
     
-        if(productoCarrito === undefined){
-            const nuevoProductoCarrito = {
-                id: id,
-                nombre: name,
-                precio: price,
-                imagen: img,
-                cantidad: 1
+            const productoCarrito = carrito.find((producto) => producto.id === idProducto)
+    
+            if(productoCarrito === undefined){
+                const nuevoProductoCarrito = {
+                    id: id,
+                    nombre: name,
+                    precio: price,
+                    imagen: img,
+                    cantidad: 1
+                }
+    
+                carrito.push(nuevoProductoCarrito)
+    
+                sessionStorage.setItem("carrito", JSON.stringify(carrito))
+            }else{
+                const indexProductoCarrito = carrito.findIndex((producto) => producto.id === idProducto)
+    
+                carrito[indexProductoCarrito].quantity++
+                carrito[indexProductoCarrito].price = price * carrito[indexProductoCarrito].quantity
+                
+                sessionStorage.setItem("carrito", JSON.stringify(carrito))
             }
     
-            carrito.push(nuevoProductoCarrito)
+            carrito = JSON.parse(sessionStorage.getItem("carrito"))
     
-            sessionStorage.setItem("carrito", JSON.stringify(carrito))
-        }else{
-            const indexProductoCarrito = carrito.findIndex((producto) => producto.id === idProducto)
-    
-            carrito[indexProductoCarrito].cantidad++
-            carrito[indexProductoCarrito].price = price * carrito[indexProductoCarrito].cantidad
-            
-            sessionStorage.setItem("carrito", JSON.stringify(carrito))
+            alert(`usted compro el producto ${name}`)
+        
         }
-    
-        carrito = JSON.parse(sessionStorage.getItem("carrito"))
-    
-        alert(`usted compro el producto ${name}`)
     
         const dibujarCarrito = () => {
             listaCarrito.innerHTML = ''

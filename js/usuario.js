@@ -31,7 +31,7 @@ const validarYLogear = (user, pass) => {
     const userExist = usuarios.find((usuario) => usuario.user === user)
 
     if(userExist === undefined || userExist.pass !== pass){
-        alert("error en usuario o contraseña")
+        alert("error en usuario o contraseÃ±a")
     }else{
         alert(`Bienvenido ${user}`)
 
@@ -42,7 +42,7 @@ const validarYLogear = (user, pass) => {
         }
 
         sessionStorage.setItem("usuario", JSON.stringify(usuario))
-        location.href = "../inicio.html"
+        location.href = "../index.html"
     }
 }
 
@@ -52,7 +52,7 @@ btnRegister.addEventListener("click", (e) => {
     const user = formRegister.children[0].children[1].value
     const pass = formRegister.children[1].children[1].value
 
-    const nuevoUsuario = new newUser(user, pass)
+    const nuevoUsuario = new NewUser(user, pass)
 
     validarYRegistrar(nuevoUsuario)
 
@@ -61,19 +61,19 @@ btnRegister.addEventListener("click", (e) => {
 
 const validarYRegistrar = (nuevoUsuario) => {
 
-    const userNuevo = usuarios.find((usuario) => usuario.user === nuevoUsuario.user)
+    const userNuevo = usuarios.find((usuario) => usuario?.user === nuevoUsuario.user)
 
     if(userNuevo === undefined){
-        usuarios.push(userNuevo)
+        usuarios.push(nuevoUsuario)
         localStorage.setItem("usuarios", JSON.stringify(usuarios))
         sessionStorage.setItem("usuario", JSON.stringify(nuevoUsuario))
-        alert(`Gracias ${nuevoUsuario.user} por registrarte... usted sera redirigido a la pag principal`)
-        //location.href = "../inicio.html"
+        alert(`Gracias ${nuevoUsuario.user} por registrarte... usted serÃ¡ redirigido a la pag principal`)
+        location.href = "../index.html"
     }else{
         alert("El usuario ya existe")
 
         sessionStorage.setItem("usuario", JSON.stringify(usuario))
-        location.href = "../inicio.html"
+        location.href = "../index.html"
     }
 
 }

@@ -1,25 +1,50 @@
 import { comprarProducto } from "./carrito.js";
 
-const divProductos = document.getElementById("productos");
+const userLogin = document.getElementById("userLogin")
+const divProductos = document.getElementById("productosDestacados");
 
+localStorage.setItem("productos", JSON.stringify(productosDestacados));
+export let productosDisponibles = JSON.parse(localStorage.getItem("productosDestacados"));
 
-localStorage.setItem("productos", JSON.stringify(productos));
-export let productosDisponibles = JSON.parse(localStorage.getItem("productos"));
+let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
 
 document.addEventListener("DOMContentLoaded" , () => {
+
+    if(usuarioLogeado === null){
+        const a = document.createElement("a")
+        a.href = "./html/usuarios.html"
+        a.innerHTML = "Login"
+        userLogin.appendChild(a)
+    }else{
+        const p = document.createElement("p")
+        const close = document.createElement("button")
+
+        p.innerHTML = `Bienvenido ${usuarioLogeado.user}`
+        close.id = "cerrar__sesion"
+        close.innerHTML = "cerrar sesion"
+        close.addEventListener("click", () => {
+            alert(`Gracias por comprar en nuestra tienda ${usuarioLogeado.user}. Usuario deslogeado.`)
+            
+            sessionStorage.removeItem("usuario")
+            location.reload()
+        })
+
+        userLogin.appendChild(p)
+        userLogin.appendChild(close)
+    }
     generarCardsProductos(productosDisponibles)
 })
 
-export const generarCardsProductos = (productos) => {
+export const generarCardsProductos = (productosDestacados) => {
     divProductos.innerHTML = "";
 
-    productos.forEach((producto) => {
+    productosDestacados.forEach((producto) => {
 
         const { img , name, plataform, price, id } = producto
 
         let card = document.createElement("div")
         
-        card.className = "producto"
+        card.className = "producto";
         card.innerHTML = `
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${img}" alt="Card image cap">
@@ -30,7 +55,7 @@ export const generarCardsProductos = (productos) => {
                 <button id="comprar${id}" class="btn btn-primary">Comprar</button>
             </div>
         </div>
-        `
+        `;
 
         divProductos.appendChild(card)
 

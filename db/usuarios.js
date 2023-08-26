@@ -7,4 +7,4 @@ export let dbUsuarios = [
     },
 ];
 
-JSON.parse(localStorage.setItem("usuarios")) || localStorage.setItem("usuarios", JSON.stringify(dbUsuarios));
+JSON.parse(localStorage.getItem("usuarios")) || localStorage.setItem("usuarios", JSON.stringify(dbUsuarios));
