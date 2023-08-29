@@ -81,6 +81,7 @@ const productosDestacados = [
     {id:10, img: "https://http2.mlstatic.com/D_NQ_NP_866648-MLA54972688927_042023-O.webp", name:'HOGWARTS LEGACY', price: 45000, stock: 12, plataform: 'PS5/PS4'},
     {id:11, img: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
     {id:13, img: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'}
+    
 
 ]
 

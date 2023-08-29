@@ -155,6 +155,7 @@ nav ul li a:hover{
     cursor: pointer;
     display: flex;
     justify-content: end;
+    margin-right: 10px;
 }
 
 .userLogin{
@@ -166,4 +167,10 @@ nav ul li a:hover{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    
+}
+
+
+#agregar__producto{
+    display: none;
 }

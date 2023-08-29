@@ -1,9 +1,15 @@
+import { eliminarProducto } from "./admin.js";
 import { comprarProducto } from "./carrito.js";
+
 
 const userLogin = document.getElementById("userLogin")
 const divProductos = document.getElementById("productosDestacados");
+const filterInput = document.getElementById("filter__input")
+const filterLista = document.getElementById("filter__lista")
+const filterNombre = document.getElementById("filter__nombre")
+const filterPrecio = document.getElementById("filter__precio")
 
-localStorage.setItem("productos", JSON.stringify(productosDestacados));
+//localStorage.setItem("productos", JSON.stringify(productosDestacados));
 export let productosDisponibles = JSON.parse(localStorage.getItem("productosDestacados"));
 
 let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
@@ -53,6 +59,10 @@ export const generarCardsProductos = (productosDestacados) => {
                 <p class="card-text">${plataform}</p>
                 <p class="card-text">$${price}</p>
                 <button id="comprar${id}" class="btn btn-primary">Comprar</button>
+
+                ${
+                    usuarioLogeado?.admin === true ? `<button id="eliminar${id}" class="btn btn-danger">Eliminar</button>` : ""
+                }
             </div>
         </div>
         `;
@@ -62,6 +72,95 @@ export const generarCardsProductos = (productosDestacados) => {
         const btnComprar = document.getElementById(`comprar${id}`)
         btnComprar.addEventListener("click", () => comprarProducto(id))
 
+        if(usuarioLogeado?.admin === true) {
+            const btnEliminar = document.getElementById(`eliminar${id}`)
+            btnEliminar.addEventListener("click", () => eliminarProducto(id))
+        }
+
         
     });
 };
+
+
+//filtro por input
+
+filterInput.addEventListener("keyup", (e) => {
+    const productosFilter = productosDisponibles.filter((producto) => producto.name.toLowerCase().includes(e.target.value))
+    
+    productosDisponibles = productosFilter
+
+    if(e.target.value !== ""){
+        generarCardsProductos(productosFilter)
+    }else{
+        productosDisponibles = JSON.parse(localStorage.getItem("productosDestacados"))
+        generarCardsProductos(productosDisponibles)
+    }
+})
+
+
+//filtro por categoria
+
+filterLista.addEventListener("click", (e) => {
+    const productosFilter = productosDisponibles.filter((producto) => producto.category.toLowerCase().includes(e.target.innerHTML.toLowerCase()))
+    
+    productosDisponibles = productosFilter
+
+    if(e.target.innerHTML !== "Todos"){
+        generarCardsProductos(productosFilter)
+    }else{
+        productosDisponibles = JSON.parse(localStorage.getItem("productosDestacados"))
+        generarCardsProductos(productosDisponibles)
+    }
+})
+
+
+//filtro por nombre
+
+filterNombre.addEventListener("click", (e) => {
+    filtrarPorNombre(e.target.innerHTML)
+})
+
+const filtrarPorNombre = (orden) => {
+    let productos
+
+    if(orden === "Ascendente") {
+        productos = productosDisponibles.sort((a, b) => {
+            if(a.name.toLowerCase() > b.name.toLowerCase()) {
+                return 1
+            }else if (a.name.toLowerCase < b.name.toLowerCase()) {
+                return -1
+            }else {
+                return 0
+            }
+        })
+    }else if (orden === "Descendente") {
+        productos = productosDisponibles.sort((a, b) => {
+            if(a.name.toLowerCase() < b.name.toLowerCase()) {
+                return 1
+            }else if (a.name.toLowerCase > b.name.toLowerCase()) {
+                return -1
+            }else {
+                return 0
+            }
+        })
+    }
+
+    generarCardsProductos(productos)
+}
+
+
+//filtro por precio
+
+filterPrecio.addEventListener("click", (e) => {
+    const orden = e.target.innerHTML
+    let productos
+
+    if(orden === "Ascendente") {
+        productos = productosDisponibles.sort((a, b) => a.price - b.price)
+    }else if (orden === "Descendente") {
+        productos = productosDisponibles.sort((a, b) => b.price - a.price)
+    }
+
+    generarCardsProductos(productos)
+
+})
