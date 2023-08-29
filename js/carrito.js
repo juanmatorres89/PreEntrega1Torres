@@ -192,16 +192,16 @@ pagoEnCuotas(15000, 2);
             const producto = productosDisponibles.find((producto) => producto.id === idProducto)
     
     
-            const { name, price, img, id } = producto
+            const { nombre, precio, imagen, id } = producto
     
             const productoCarrito = carrito.find((producto) => producto.id === idProducto)
     
             if(productoCarrito === undefined){
                 const nuevoProductoCarrito = {
                     id: id,
-                    nombre: name,
-                    precio: price,
-                    imagen: img,
+                    nombre: nombre,
+                    precio: precio,
+                    imagen: imagen,
                     cantidad: 1
                 }
     
@@ -211,15 +211,15 @@ pagoEnCuotas(15000, 2);
             }else{
                 const indexProductoCarrito = carrito.findIndex((producto) => producto.id === idProducto)
     
-                carrito[indexProductoCarrito].quantity++
-                carrito[indexProductoCarrito].price = price * carrito[indexProductoCarrito].quantity
+                carrito[indexProductoCarrito].cantidad++
+                carrito[indexProductoCarrito].price = price * carrito[indexProductoCarrito].cantidad
                 
                 sessionStorage.setItem("carrito", JSON.stringify(carrito))
             }
     
             carrito = JSON.parse(sessionStorage.getItem("carrito"))
     
-            alert(`usted compro el producto ${name}`)
+            alert(`usted compro el producto ${nombre}`)
         
         }
     
@@ -227,18 +227,18 @@ pagoEnCuotas(15000, 2);
             listaCarrito.innerHTML = ''
             
             carrito.forEach(producto => {
-                const { img, name, quantity, price, id } = producto
+                const { imagen, nombre, cantidad, precio, id } = producto
     
                 let body = document.createElement("tr")
     
                 body.className = "producto__carrito"
     
                 body.innerHTML = `
-                <th><img id="fotoProductoCarrito" src="${img}" class="card-img-top"</th>
-                <td>${name}</td>
-                <td>${quantity}</td>
-                <td>${price / quantity}</td>
-                <td>${price}</td>
+                <th><img id="fotoProductoCarrito" src="${imagen}" class="card-img-top"</th>
+                <td>${nombre}</td>
+                <td>${cantidad}</td>
+                <td>${precio / cantidad}</td>
+                <td>${precio}</td>
                 <td>
                     <button id="+${id}" class="btn btn-success">+</button>
                     <button id="-${id}" class="btn btn-danger">-</button>
@@ -282,8 +282,8 @@ pagoEnCuotas(15000, 2);
         }
     
         const generarTotales = () => {
-            const costoTotal = carrito.reduce((total, { price }) => total + price, 0)
-            const cantidadTotal = carrito.reduce((total, { quantity }) => total + quantity, 0)
+            const costoTotal = carrito.reduce((total, { precio }) => total + precio, 0)
+            const cantidadTotal = carrito.reduce((total, { cantidad }) => total + cantidad, 0)
     
             return {
                 costoTotal: costoTotal,
@@ -293,10 +293,10 @@ pagoEnCuotas(15000, 2);
     
         const aumentarCantidad = (id) => {
             const indexProductoCarrito = carrito.findIndex((producto) => producto.id === id)
-            const price = carrito[indexProductoCarrito].price / carrito[indexProductoCarrito].quantity
+            const precio = carrito[indexProductoCarrito].precio / carrito[indexProductoCarrito].cantidad
     
-            carrito[indexProductoCarrito].quantity++
-            carrito[indexProductoCarrito].price = price*carrito[indexProductoCarrito].quantity
+            carrito[indexProductoCarrito].cantidad++
+            carrito[indexProductoCarrito].precio = precio*carrito[indexProductoCarrito].cantidad
     
             sessionStorage.setItem("carrito", JSON.stringify(carrito))
     
@@ -306,12 +306,12 @@ pagoEnCuotas(15000, 2);
     
         const restarCantidad = (id) => {
             const indexProductoCarrito = carrito.findIndex((producto) => producto.id === id)
-            const price = carrito[indexProductoCarrito].price / carrito[indexProductoCarrito].quantity
+            const precio = carrito[indexProductoCarrito].precio / carrito[indexProductoCarrito].cantidad
     
-            carrito[indexProductoCarrito].quantity--
-            carrito[indexProductoCarrito].price = price*carrito[indexProductoCarrito].quantity
+            carrito[indexProductoCarrito].cantidad--
+            carrito[indexProductoCarrito].precio = precio*carrito[indexProductoCarrito].cantidad
     
-            if(carrito[indexProductoCarrito].quantity === 0) {
+            if(carrito[indexProductoCarrito].cantidad === 0) {
                 carrito.splice(indexProductoCarrito, 1)
             }
     

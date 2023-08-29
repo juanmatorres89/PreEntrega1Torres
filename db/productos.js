@@ -73,14 +73,14 @@ const productos = [
 JSON.parse(localStorage.getItem("productos")) || localStorage.setItem("productos", JSON.stringify(productos));
 
 const productosDestacados = [
-    {id:65, img: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", name:'PLAYSTATION 4 PRO', price: 460000, stock: 4, plataform: 'PS4'},
-    {id:66, img: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", name:'PLAYSTATION 5 STANDARD', price: 620000, stock: 5, plataform: 'PS5'},
-    {id:67, img: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", name:'XBOX SERIES S', price: 500000, stock: 3, plataform: 'XBOX'},
-    {id:68, img: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", name:'XBOX SERIES X', price: 600000, stock: 5, plataform: 'XBOX'},
-    {id:69, img: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", name:'NINTENDO SWITCH OLED', price: 400000, stock: 3, plataform: 'N SWITCH'},
-    {id:10, img: "https://http2.mlstatic.com/D_NQ_NP_866648-MLA54972688927_042023-O.webp", name:'HOGWARTS LEGACY', price: 45000, stock: 12, plataform: 'PS5/PS4'},
-    {id:11, img: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
-    {id:13, img: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'}
+    {id:65, imagen: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", nombre:'PLAYSTATION 4 PRO', precio: 460000, stock: 4, plataforma: 'PS4'},
+    {id:66, imagen: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", nombre:'PLAYSTATION 5 STANDARD', precio: 620000, stock: 5, plataforma: 'PS5'},
+    {id:67, imagen: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", nombre:'XBOX SERIES S', precio: 500000, stock: 3, plataforma: 'XBOX'},
+    {id:68, imagen: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", nombre:'XBOX SERIES X', precio: 600000, stock: 5, plataforma: 'XBOX'},
+    {id:69, imagen: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", nombre:'NINTENDO SWITCH OLED', precio: 400000, stock: 3, plataforma: 'N SWITCH'},
+    {id:10, imagen: "https://http2.mlstatic.com/D_NQ_NP_866648-MLA54972688927_042023-O.webp", nombre:'HOGWARTS LEGACY', precio: 45000, stock: 12, plataforma: 'PS5/PS4'},
+    {id:11, imagen: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", nombre:'RESIDENT EVIL 4: REMAKE', precio: 42000, stock: 7, plataforma: 'PS5/PS4'},
+    {id:13, imagen: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", nombre:'DIABLO IV', precio: 45000, stock: 15, plataforma: 'PS5/PS4'}
     
 
 ]

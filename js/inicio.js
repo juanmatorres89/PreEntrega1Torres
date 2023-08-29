@@ -9,7 +9,7 @@ const filterLista = document.getElementById("filter__lista")
 const filterNombre = document.getElementById("filter__nombre")
 const filterPrecio = document.getElementById("filter__precio")
 
-//localStorage.setItem("productos", JSON.stringify(productosDestacados));
+localStorage.setItem("productos", JSON.stringify(productosDestacados));
 export let productosDisponibles = JSON.parse(localStorage.getItem("productosDestacados"));
 
 let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
@@ -46,18 +46,18 @@ export const generarCardsProductos = (productosDestacados) => {
 
     productosDestacados.forEach((producto) => {
 
-        const { img , name, plataform, price, id } = producto
+        const { imagen , nombre, plataforma, precio, id } = producto
 
         let card = document.createElement("div")
         
         card.className = "producto";
         card.innerHTML = `
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${img}" alt="Card image cap">
+            <img class="card-img-top" src="${imagen}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">${name}</h5>
-                <p class="card-text">${plataform}</p>
-                <p class="card-text">$${price}</p>
+                <h5 class="card-title">${nombre}</h5>
+                <p class="card-text">${plataforma}</p>
+                <p class="card-text">$${precio}</p>
                 <button id="comprar${id}" class="btn btn-primary">Comprar</button>
 
                 ${
@@ -85,7 +85,7 @@ export const generarCardsProductos = (productosDestacados) => {
 //filtro por input
 
 filterInput.addEventListener("keyup", (e) => {
-    const productosFilter = productosDisponibles.filter((producto) => producto.name.toLowerCase().includes(e.target.value))
+    const productosFilter = productosDisponibles.filter((producto) => producto.nombre.toLowerCase().includes(e.target.value))
     
     productosDisponibles = productosFilter
 
@@ -101,7 +101,7 @@ filterInput.addEventListener("keyup", (e) => {
 //filtro por categoria
 
 filterLista.addEventListener("click", (e) => {
-    const productosFilter = productosDisponibles.filter((producto) => producto.category.toLowerCase().includes(e.target.innerHTML.toLowerCase()))
+    const productosFilter = productosDisponibles.filter((producto) => producto.plataforma.toLowerCase().includes(e.target.innerHTML.toLowerCase()))
     
     productosDisponibles = productosFilter
 
@@ -125,9 +125,9 @@ const filtrarPorNombre = (orden) => {
 
     if(orden === "Ascendente") {
         productos = productosDisponibles.sort((a, b) => {
-            if(a.name.toLowerCase() > b.name.toLowerCase()) {
+            if(a.name.toLowerCase() > b.nombre.toLowerCase()) {
                 return 1
-            }else if (a.name.toLowerCase < b.name.toLowerCase()) {
+            }else if (a.name.toLowerCase < b.nombre.toLowerCase()) {
                 return -1
             }else {
                 return 0
@@ -135,9 +135,9 @@ const filtrarPorNombre = (orden) => {
         })
     }else if (orden === "Descendente") {
         productos = productosDisponibles.sort((a, b) => {
-            if(a.name.toLowerCase() < b.name.toLowerCase()) {
+            if(a.name.toLowerCase() < b.nombre.toLowerCase()) {
                 return 1
-            }else if (a.name.toLowerCase > b.name.toLowerCase()) {
+            }else if (a.name.toLowerCase > b.nombre.toLowerCase()) {
                 return -1
             }else {
                 return 0
@@ -156,9 +156,9 @@ filterPrecio.addEventListener("click", (e) => {
     let productos
 
     if(orden === "Ascendente") {
-        productos = productosDisponibles.sort((a, b) => a.price - b.price)
+        productos = productosDisponibles.sort((a, b) => a.precio - b.precio)
     }else if (orden === "Descendente") {
-        productos = productosDisponibles.sort((a, b) => b.price - a.price)
+        productos = productosDisponibles.sort((a, b) => b.precio - a.precio)
     }
 
     generarCardsProductos(productos)

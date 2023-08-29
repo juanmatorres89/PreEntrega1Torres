@@ -118,11 +118,11 @@ btnModificar.addEventListener("click", () => {modificarProductosCard()})
         card.className = "producto";
         card.innerHTML = `
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${productosDestacados.imagen}" alt="Card image cap">
-            <p>Imagen:<input type="text" value="${productosDestacados.imagen}"></p>
-            <p>Nombre:<input type="text" value="${productosDestacados.nombre}"></p>
-            <p>Precio:<input type="text" value="${productosDestacados.precio}"></p>
-            <p>categoria:<input type="text" value="${productosDestacados.categoria}"></p>
+            <img class="card-img-top" src="${producto.imagen}" alt="Card image cap">
+            <p>Imagen:<input type="text" value="${producto.imagen}"></p>
+            <p>Nombre:<input type="text" value="${producto.nombre}"></p>
+            <p>Precio:<input type="text" value="${producto.precio}"></p>
+            <p>categoria:<input type="text" value="${producto.plataforma}"></p>
             <div class="card-body"
                 <button id="boton${producto.id}" class="btn btn-success">Modificar</button>
                 <button id="cancelar${producto.id}" class="btn btn-danger">Cancelar</button>
@@ -131,8 +131,8 @@ btnModificar.addEventListener("click", () => {modificarProductosCard()})
 
         divProductos.appendChild(card);
 
-        const btnAceptar = document.getElementById(`boton${productosDestacados.id}`)
-        const btnCancelar = document.getElementById(`cancelar${productosDestacados.id}`)
+        const btnAceptar = document.getElementById(`boton${producto.id}`)
+        const btnCancelar = document.getElementById(`cancelar${producto.id}`)
 
         btnAceptar.addEventListener("click", (e) => modificarProductos(e, producto.id))
         btnCancelar.addEventListener("click", () => generarCardsProductos(productosDisponibles))
