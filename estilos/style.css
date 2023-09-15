@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&family=Roboto:ital@0;1&display=swap");
+
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: rgb(16, 128, 226);;
+    background-color: antiquewhite;
 }
 
 h1 {
@@ -54,26 +56,6 @@ h1 {
     font-weight: 300;
 }
 
-/*menu*/
-
-.menu li{
-    position: relative;
-    display: inline-block;
-    font-size: 200px;
-    margin-top: -500px;
-}
-
-.submenu{
-    display: none ;
-    position: absolute;
-    color: rgb(7, 126, 224);
-    list-style: none;
-}
-
-.menu li:hover .submenu{
-    display: block;
-}
-
 /*nav*/
 
 nav{
@@ -105,18 +87,17 @@ nav ul li a:hover{
     background-color: rgb(16, 128, 226);
 }
 
-/*img*/
+/*Preventas*/
 
-.imgPreventas{
-    display: grid;
-    gap: 50px;
+#preventasDestacadas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
     
 }
 
-.carousel-inner {
-    width: 100%;
-    
-}
+/* carrousel */
 
 .carousel-item img {
     width: 80%;
@@ -124,9 +105,10 @@ nav ul li a:hover{
     
 }
 
+/* footer */
+
 #footer {
     text-align: center;
-    
 }
 
 
@@ -139,6 +121,8 @@ nav ul li a:hover{
     margin: auto;
     width: 20%;
 }
+
+/* carrito */
 
 .carrito {
     display: none;
@@ -158,6 +142,8 @@ nav ul li a:hover{
     margin-right: 10px;
 }
 
+/* login */
+
 .userLogin{
     display: flex;
     justify-content: end;
@@ -173,4 +159,10 @@ nav ul li a:hover{
 
 #agregar__producto{
     display: none;
+}
+
+
+
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }

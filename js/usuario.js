@@ -31,9 +31,14 @@ const validarYLogear = (user, pass) => {
     const userExist = usuarios.find((usuario) => usuario.user === user)
 
     if(userExist === undefined || userExist.pass !== pass){
-        alert("error en usuario o contraseÃ±a")
+        Swal.fire({
+            icon: 'error',
+            //title: 'Oops...',
+            text: 'Error en el usuario o la contraseña',
+            //footer: '<a href="">Why do I have this issue?</a>'
+            })
     }else{
-        alert(`Bienvenido ${user}`)
+        Swal.fire(`Bienvenido ${user}`)
 
         let usuario = {
             user: userExist.user,
@@ -66,11 +71,18 @@ const validarYRegistrar = (nuevoUsuario) => {
     if(userNuevo === undefined){
         usuarios.push(nuevoUsuario)
         localStorage.setItem("usuarios", JSON.stringify(usuarios))
+        
         sessionStorage.setItem("usuario", JSON.stringify(nuevoUsuario))
-        alert(`Gracias ${nuevoUsuario.user} por registrarte... usted serÃ¡ redirigido a la pag principal`)
-        location.href = "../index.html"
+        
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Gracias por registrarte ${nuevoUsuario.user}`,
+            showConfirmButton: false,
+            timer: 1500
+            })
     }else{
-        alert("El usuario ya existe")
+        Swal.fire('El usuario ya existe!')
 
         sessionStorage.setItem("usuario", JSON.stringify(usuario))
         location.href = "../index.html"

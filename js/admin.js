@@ -16,12 +16,12 @@ export const eliminarProducto = (id) => {
 
 
 class Productos{
-    constructor(nombre, precio, imagen, categoria){
+    constructor(nombre, precio, imagen, plataforma){
         this.id = generarId(),
         this.nombre = nombre,
         this.precio = precio,
         this.imagen = imagen,
-        this.categoria = categoria
+        this.plataforma = plataforma
     }
 }
 
@@ -99,7 +99,12 @@ const generarVistaAgregar = () => {
             generarCardsProductos(productosDisponibles)
 
         }else{
-            alert("algun/os valores no estan completos")
+            Swal.fire({
+                icon: 'error',
+                //title: 'Oops...',
+                text: 'Por favor, completá todos los campos',
+                //footer: '<a href="">Why do I have this issue?</a>'
+            })
         }
 
     }
@@ -108,36 +113,38 @@ const generarVistaAgregar = () => {
 
 btnModificar.addEventListener("click", () => {modificarProductosCard()})
 
-    const modificarProductosCard = () => {
-    
-        divProductos.innerHTML = "";
+const modificarProductosCard = () => {
 
-        productosDisponibles.forEach((producto) => {
+    divProductos.innerHTML = "";
+
+    productosDisponibles.forEach((producto) => {
         let card = document.createElement("div");
-
         card.className = "producto";
         card.innerHTML = `
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="${producto.imagen}" alt="Card image cap">
-            <p>Imagen:<input type="text" value="${producto.imagen}"></p>
-            <p>Nombre:<input type="text" value="${producto.nombre}"></p>
-            <p>Precio:<input type="text" value="${producto.precio}"></p>
-            <p>categoria:<input type="text" value="${producto.plataforma}"></p>
-            <div class="card-body"
-                <button id="boton${producto.id}" class="btn btn-success">Modificar</button>
-                <button id="cancelar${producto.id}" class="btn btn-danger">Cancelar</button>
-            </div>
+        <img class="card-img-top" src="${producto.imagen}" alt="Card image cap">
+        <p>Imagen: <input type="text" value="${producto.imagen}"></p>
+        <p>Nombre: <input type="text" value="${producto.nombre}"></p>
+        <p>Precio: <input type="text" value="${producto.precio}"></p>
+        <p>Plataforma: <input type="text" value="${producto.plataforma}"></p>
+        <div class="card-body">
+        <button id="boton${producto.id}" class="btn btn-success">Modificar</button>
+        <button id="cancelar${producto.id}" class="btn btn-danger">Cancelar</button>
+        </div>
+    
         </div>`;
+    
+    divProductos.appendChild(card);
+    const btnAceptar = document.getElementById(`boton${producto.id}`)
+    const btnCancelar = document.getElementById(`cancelar${producto.id}`)
 
-        divProductos.appendChild(card);
+    btnAceptar.addEventListener("click", (e) => modificarProductos(e,producto.id))
+    btnCancelar.addEventListener("click", () => generarCardsProductos(productosDisponibles))
+});
 
-        const btnAceptar = document.getElementById(`boton${producto.id}`)
-        const btnCancelar = document.getElementById(`cancelar${producto.id}`)
 
-        btnAceptar.addEventListener("click", (e) => modificarProductos(e, producto.id))
-        btnCancelar.addEventListener("click", () => generarCardsProductos(productosDisponibles))
-    });
 }
+
 
 
 const modificarProductos = (e, id) => {
@@ -146,13 +153,15 @@ const modificarProductos = (e, id) => {
     const imagen = e.target.parentElement.parentElement.children[1].children[0].value
     const nombre = e.target.parentElement.parentElement.children[2].children[0].value
     const precio = e.target.parentElement.parentElement.children[3].children[0].value
-    const categoria = e.target.parentElement.parentElement.children[4].children[0].value
+    const plataforma = e.target.parentElement.parentElement.children[4].children[0].value
 
     productosDisponibles[productoIndice].nombre = nombre
     productosDisponibles[productoIndice].precio = precio
+
     productosDisponibles[productoIndice].imagen = imagen
-    productosDisponibles[productoIndice].categoria = categoria
-    
+    productosDisponibles[productoIndice].plataforma = plataforma
+
+
     localStorage.setItem("productos", JSON.stringify(productosDisponibles))
     generarCardsProductos(productosDisponibles)
 

@@ -1,77 +1,3 @@
-const productos = [
-    {id:1, img: "", name:'FIFA 23', price: 27000, stock: 15, plataform: 'PS5/PS4'},
-    {id:2, img: "", name:'ELDEN RING', price: 35000, stock: 7, plataform: 'PS5/PS4'},
-    {id:3, img: "", name:"MORTAL KOMBAT 11", price: 25000, stock: 10, plataform: "PS5/PS4"},
-    {id:4, img: "", name:'GOD OF WAR: RAGNAROK', price: 42000, stock: 10, plataform: 'PS5/PS4'},
-    {id:5, img: "", name:'CALL OF DUTY: MODERN WARFARE II', price: 40000, stock: 5, plataform: 'PS5/PS4'},
-    {id:6, img: "", name:'GRAN TURISMO 7: 25 ANNIVERSARY', price: 39000, stock: 2, plataform: 'PS5'},
-    {id:7, img: "", name:'UNCHARTED: LOST LEGACY COLLECTION', price: 24000, stock: 3, plataform: 'PS5'},
-    {id:8, img: "", name:'HORIZON FORBBIDEN WEST SPECIAL EDITION', price: 30000, stock: 4, plataform: 'PS5/PS4'},
-    {id:9, img: "", name:'DEAD SPACE: REMAKE', price: 42000, stock: 8, plataform: 'PS5'},
-    {id:10, img: "", name:'HOGWARTS LEGACY', price: 45000, stock: 12, plataform: 'PS5/PS4'},
-    {id:11, img: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", name:'RESIDENT EVIL 4: REMAKE', price: 42000, stock: 7, plataform: 'PS5/PS4'},
-    {id:12, img: "", name:'FINAL FANTASY XVI', price: 46000, stock: 13, plataform: 'PS5'},
-    {id:13, img: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", name:'DIABLO IV', price: 45000, stock: 15, plataform: 'PS5/PS4'},
-    {id:14, img: "", name:'STREET FIGHTER 6', price: 44700, stock: 13, plataform: 'PS5'},
-    {id:15, img: "", name:'SPIDERMAN MILES MORALES', price: 35100, stock: 13, plataform: 'PS5/PS4'},
-    {id:16, img: "", name:'DEAD ISLAND 2', price: 47900, stock: 13, plataform: 'PS5/PS4'},
-    {id:17, img: "", name:'CUPHEAD', price: 30800, stock: 3, plataform: 'PS5'},
-    {id:18, img: "", name:'DRAGON BALL Z KAKAROT', price: 21600, stock: 16, plataform: 'PS5'},
-    {id:19, img: "", name:'THE CALLISTO PROTOCOL', price: 40000, stock: 7, plataform: 'PS5/PS4'},
-    {id:20, img: "", name:'CYBERPUNK 2077', price: 19000, stock: 10, plataform: 'PS4'},
-    {id:21, img: "", name:'ALAN WAKE REMASTERED', price: 22200, stock: 9, plataform: 'PS5/PS4'},
-    {id:22, img: "", name:'DEATH STRANDING', price: 28000, stock: 1, plataform: 'PS5'},
-    {id:23, img: "", name:'DYING LIGHT 2 STAY HUMAN', price: 36000, stock: 4, plataform: 'PS5/PS4'},
-    {id:24, img: "", name:'DUALSENSE MIDNIGHT BLACK', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:25, img: "", name:'DUALSENSE STARLIGHT BLUE', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:26, img: "", name:'DUALSENSE PINK NOVA', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:27, img: "", name:'DUALSENSE GRAY CAMOUFLAGE', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:28, img: "", name:'DUALSENSE WHITE', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:29, img: "", name:'DUALSENSE COSMIC RED', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:30, img: "", name:'DUALSENSE GALACTIC PURPLE', price: 60000, stock: 8, plataform: 'PS5'},
-    {id:31, img: "", name:'GHOST OF TSUSHIMA', price: 354000, stock: 7, plataform: 'PS5/PS4'},
-    {id:32, img: "", name:'GRAND THEFT AUTO V', price: 23500, stock: 11, plataform: 'PS5/PS4'},
-    {id:33, img: "", name:'GHOSTWIRE TOKIO', price: 31000, stock: 5, plataform: 'PS5'},
-    {id:34, img: "", name:'THE LAST OF US PART I', price: 46000, stock: 12, plataform: 'PS5'},
-    {id:35, img: "", name:'BLOODBORNE', price: 15000, stock: 4, plataform: 'PS4'},
-    {id:36, img: "", name:'DARK SOULS 3', price: 19000, stock: 13, plataform: 'PS4'},
-    {id:37, img: "", name:'ASSASSINS CREED VALHALLA', price: 27000, stock: 9, plataform: 'PS5/PS4'},
-    {id:38, img: "", name:'DEMONS SOULS', price: 37000, stock: 17, plataform: 'PS5'},
-    {id:39, img: "", name:'GOTHAM KNIGHTS', price: 44000, stock: 2, plataform: 'PS5'},
-    {id:40, img: "", name:'HITMAN III', price: 25000, stock: 6, plataform: 'PS5/PS4'},
-    {id:41, img: "", name:'DEVIL MAY CRY V', price: 20400, stock: 9, plataform: 'PS4'},
-    {id:42, img: "", name:'MEDIEVIL', price: 20000, stock: 3, plataform: 'PS4'},
-    {id:43, img: "", name:'THE EVIL WITHIN 2', price: 24000, stock: 13, plataform: 'PS4'},
-    {id:44, img: "", name:'THE LAST OF US PART II', price: 21000, stock: 5, plataform: 'PS4'},
-    {id:45, img: "", name:'THE WITCHER III', price: 31000, stock: 3, plataform: 'PS5/PS4'},
-    {id:46, img: "", name:'SEKIRO SHADOWS DIE TWICE', price: 30000, stock: 8, plataform: 'PS4'},
-    {id:47, img: "", name:'THE QUARRY', price: 28100, stock: 6, plataform: 'PS5/PS4'},
-    {id:48, img: "", name:'BACK 4 BLOOD', price: 20000, stock: 8, plataform: 'PS5/PS4'},
-    {id:49, img: "", name:'MAFIA III', price: 17000, stock: 2, plataform: 'PS4'},
-    {id:50, img: "", name:'WATCH DOGS LEGION', price: 12000, stock: 2, plataform: 'PS5/PS4'},
-    {id:51, img: "", name:'CRASH TEAM RUMBLE', price: 35000, stock: 4, plataform: 'PS5'},
-    {id:52, img: "", name:'ATOMIC HEART', price: 37200, stock: 5, plataform: 'PS5/PS4'},
-    {id:53, img: "", name:'DAYS GONE', price: 18000, stock: 1, plataform: 'PS4'},
-    {id:54, img: "", name:'LEGO: STAR WARS THE SKYWALKER SAGA', price: 35000, stock: 13, plataform: 'PS4'},
-    {id:55, img: "", name:'CHRONO CROSS', price: 35000, stock: 5, plataform: 'N SWITCH'},
-    {id:56, img: "", name:'METROID PRIME', price: 46000, stock: 8, plataform: 'N SWITCH'},
-    {id:57, img: "", name:'POKEMON DIAMANTE', price: 39000, stock: 9, plataform: 'N SWITCH'},
-    {id:58, img: "", name:'THE LEGENDS OF ZELDA: TEARS OF THE KINGDOM', price: 51000, stock: 15, plataform: 'N SWITCH'},
-    {id:59, img: "", name:'MARIO STRICKERS', price: 26000, stock: 3, plataform: 'N SWITCH'},
-    {id:60, img: "", name:'LEGO DC VILLAINS', price: 13000, stock: 3, plataform: 'N SWITCH'},
-    {id:61, img: "", name:'POKEMON SHIELD', price: 28000, stock: 2, plataform: 'N SWITCH'},
-    {id:62, img: "", name:'POKEMON SWORD', price: 27000, stock: 4, plataform: 'N SWITCH'},
-    {id:63, img: "", name:'RESIDENT EVIL 8', price: 35000, stock: 8, plataform: 'PS5/PS4'},
-    {id:64, img: "", name:'RESIDENT EVIL 7', price: 20000, stock: 7, plataform: 'PS4'},
-    {id:65, img: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", name:'PLAYSTATION 4 PRO', price: 460000, stock: 4, plataform: 'PS4'},
-    {id:66, img: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", name:'PLAYSTATION 5 STANDARD', price: 620000, stock: 5, plataform: 'PS5'},
-    {id:67, img: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", name:'XBOX SERIES S', price: 500000, stock: 3, plataform: 'XBOX'},
-    {id:68, img: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", name:'XBOX SERIES X', price: 600000, stock: 5, plataform: 'XBOX'},
-    {id:69, img: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", name:'NINTENDO SWITCH OLED', price: 400000, stock: 3, plataform: 'N SWITCH'}
-]
-
-JSON.parse(localStorage.getItem("productos")) || localStorage.setItem("productos", JSON.stringify(productos));
-
 const productosDestacados = [
     {id:65, imagen: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", nombre:'PLAYSTATION 4 PRO', precio: 460000, stock: 4, plataforma: 'PS4'},
     {id:66, imagen: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", nombre:'PLAYSTATION 5 STANDARD', precio: 620000, stock: 5, plataforma: 'PS5'},
@@ -80,9 +6,47 @@ const productosDestacados = [
     {id:69, imagen: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", nombre:'NINTENDO SWITCH OLED', precio: 400000, stock: 3, plataforma: 'N SWITCH'},
     {id:10, imagen: "https://http2.mlstatic.com/D_NQ_NP_866648-MLA54972688927_042023-O.webp", nombre:'HOGWARTS LEGACY', precio: 45000, stock: 12, plataforma: 'PS5/PS4'},
     {id:11, imagen: "https://media.vandal.net/m/120274/resident-evil-4-remake-202321717493566_1.jpg", nombre:'RESIDENT EVIL 4: REMAKE', precio: 42000, stock: 7, plataforma: 'PS5/PS4'},
-    {id:13, imagen: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", nombre:'DIABLO IV', precio: 45000, stock: 15, plataforma: 'PS5/PS4'}
-    
+    {id:13, imagen: "https://gorilagames.com/img/Public/1019-producto-diablo-iv-ps5-2083.jpg", nombre:'DIABLO IV', precio: 45000, stock: 15, plataforma: 'PS5/PS4'},
+    {id:24, imagen: "https://www.megatone.net/Images/Articulos/zoom2x/235/JOY5015SNY.jpg", nombre:'DUALSENSE MIDNIGHT BLACK', precio: 60000, stock: 8, plataforma: 'PS5'},
+    {id:4, imagen: "https://media.vandal.net/m/90451/god-of-war-ragnarok-20221131016774_1.jpg", nombre:'GOD OF WAR: RAGNAROK', precio: 42000, stock: 10, plataforma: 'PS5/PS4'},
+    {id:2, imagen: "https://spacegamer.com.ar/img/Public/1058-producto-1019-producto-elden-ring-ps5-4936-2308.jpg", nombre:'ELDEN RING', precio: 35000, stock: 7, plataforma: 'PS5/PS4'},
+    {id:30, imagen: "https://www.games2egypt.com/Images/Products/63995?fileFormat=1&height=500", nombre:'DUALSENSE GALACTIC PURPLE', precio: 60000, stock: 8, plataforma: 'PS5'},
+    {id:56, imagen: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/My%20Nintendo%20Store/EN-US/Nintendo%20Switch%20Software/metroid-prime-remastered-114551/114551-metroid-prime-remastered-1200x675", nombre:'METROID PRIME', precio: 46000, stock: 8, plataforma: 'N SWITCH'},
+    {id:61, imagen: "https://m.media-amazon.com/images/I/81lwcYUU9TL._SL1500_.jpg", nombre:'POKEMON SHIELD', precio: 28000, stock: 2, plataforma: 'N SWITCH'},
+    {id:55, imagen: "https://http2.mlstatic.com/D_NQ_NP_784903-MLU70103682369_062023-O.webp", nombre:'CHRONO CROSS', precio: 35000, stock: 5, plataforma: 'N SWITCH'},
+    {id:63, imagen: "https://media.vandal.net/m/86453/resident-evil-8-village-20211229461390_1.jpg", nombre:'RESIDENT EVIL 8', precio: 35000, stock: 8, plataforma: 'PS5/PS4'},
+    {id:58, imagen: "https://m.media-amazon.com/images/I/810jZfOCHrL._AC_UF894,1000_QL80_.jpg", nombre:'THE LEGENDS OF ZELDA: TEARS OF THE KINGDOM', precio: 51000, stock: 15, plataforma: 'N SWITCH'},
+    {id:32, imagen: "https://www.cdmarket.com.ar/Image/0/600_750-936957%20Grand%20Theft%20Auto%20V%20Premium%20Edition1.jpg", nombre:'GRAND THEFT AUTO V', precio: 23500, stock: 11, plataforma: 'PS5/PS4'},
 
 ]
 
 JSON.parse(localStorage.getItem("productosDestacados")) || localStorage.setItem("productosDestacados", JSON.stringify(productosDestacados));
+
+
+const preventasDestacadas = [
+    {id:70, imagen: "https://dixgamer.com/wp-content/uploads/2023/07/EA-SPORTS-FC%E2%84%A2-24-Standard-Edition-PS5.jpg", nombre:'EA FC 24', precio: 65000, stock: 15, plataforma: 'PS5'},
+    {id:71, imagen: "https://acdn.mitiendanube.com/stores/455/350/products/tapas-web-ps5-cyber-punk-2077-phantom-liberty1-47cacf7988f96c891a16885909130457-480-0.jpg", nombre:'CYBERPUNK PHANTOM LIBERTY', precio: 60000, stock: 15, plataforma: 'PS5'},
+    {id:72, imagen: "https://spacenetgameshop.net/image/cache/data/001%20PS5%20Cover/alone-in-the-dark-deluxe-edition-ps5-cena-546x840.jpg", nombre:'ALONE IN THE DARK', precio: 59000, stock: 15, plataforma: 'PS5'},
+    {id:73, imagen: "https://spacegamer.com.ar/img/Public/1058-producto-1-9413.jpg", nombre:'MORTAL KOMBAT 1', precio: 70000, stock: 15, plataforma: 'PS5'},
+    {id:74, imagen: "https://elevengamesar.com/img/Public/1131-producto-diseno-sin-titulo-22-2842.jpg", nombre:'ALAN WAKE II', precio: 65000, stock: 15, plataforma: 'PS5'},
+    {id:75, imagen: "https://m.media-amazon.com/images/I/71dd4-RlmLL._AC_UF1000,1000_QL80_.jpg", nombre:'RIDE 5', precio: 60000, stock: 15, plataforma: 'PS5'},
+    {id:76, imagen: "https://gorilagames.com/img/Public/1019-producto-spiderman-2-ps5-1962.jpg", nombre:'SPIDERMAN 2', precio: 70000, stock: 15, plataforma: 'PS5'},
+    {id:77, imagen: "https://gorilagames.com/img/Public/1019-producto-assassins-creed-mirage-1-9685.jpg", nombre:'AC MIRAGE', precio: 65000, stock: 15, plataforma: 'PS5'},
+    {id:78, imagen: "https://m.media-amazon.com/images/I/81gB0fpm74L.jpg", nombre:'CITIES SKYLINE II', precio: 50000, stock: 15, plataforma: 'PS5'},
+    {id:79, imagen: "https://m.media-amazon.com/images/I/81bCXwcWG7L._AC_UF1000,1000_QL80_.jpg", nombre:'PAYDAY 3', precio: 59000, stock: 15, plataforma: 'PS5'},
+    {id:80, imagen: "https://s.pacn.ws/1/p/14q/tekken-8-733031.6.jpg?v=rqgs82&quality=72&width=1024&crop=798,1022", nombre:'TEKKEN 8', precio: 65000, stock: 15, plataforma: 'PS5'},
+
+]
+
+JSON.parse(localStorage.getItem("preventasDestacadas")) || localStorage.setItem("preventasDestacadas", JSON.stringify(preventasDestacadas));
+
+
+
+const consolasAccesorios = [
+    {id:65, imagen: "https://http2.mlstatic.com/D_NQ_NP_649238-MLA47385331667_092021-O.webp", nombre:'PLAYSTATION 4 PRO', precio: 460000, stock: 4, plataforma: 'PS4'},
+    {id:66, imagen: "https://nextgames.com.ar/img/Public/1040-producto-ps5-2-609.jpg", nombre:'PLAYSTATION 5 STANDARD', precio: 620000, stock: 5, plataforma: 'PS5'},
+    {id:67, imagen: "https://ss423.liverpool.com.mx/xl/1139313921.jpg", nombre:'XBOX SERIES S', precio: 500000, stock: 3, plataforma: 'XBOX'},
+    {id:68, imagen: "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png", nombre:'XBOX SERIES X', precio: 600000, stock: 5, plataforma: 'XBOX'},
+    {id:69, imagen: "https://nextgames.com.ar/img/Public/1040-producto-switch-blanca-1-3422.jpg", nombre:'NINTENDO SWITCH OLED', precio: 400000, stock: 3, plataforma: 'N SWITCH'}
+
+]
