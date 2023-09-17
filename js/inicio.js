@@ -82,7 +82,7 @@ export const generarCardsProductos = (productosDestacados) => {
 };
 
 
-//filtro por input
+//filtro
 
 filterInput.addEventListener("keyup", (e) => {
     const productosFilter = productosDisponibles.filter((producto) => producto.nombre.toLowerCase().includes(e.target.value))
@@ -98,7 +98,6 @@ filterInput.addEventListener("keyup", (e) => {
 })
 
 
-//filtro por categoria
 
 filterLista.addEventListener("click", (e) => {
     const productosFilter = productosDisponibles.filter((producto) => producto.plataforma.toLowerCase().includes(e.target.innerHTML.toLowerCase()))
@@ -114,7 +113,6 @@ filterLista.addEventListener("click", (e) => {
 })
 
 
-//filtro por nombre
 
 filterNombre.addEventListener("click", (e) => {
     filtrarPorNombre(e.target.innerHTML)
@@ -149,7 +147,6 @@ const filtrarPorNombre = (orden) => {
 }
 
 
-//filtro por precio
 
 filterPrecio.addEventListener("click", (e) => {
     const orden = e.target.innerHTML
