@@ -47,5 +47,4 @@
     {"id":113, "imagen": "https://i.ebayimg.com/images/g/8V4AAOSwYFNhQV2N/s-l400.jpg", "nombre":"DUALSHOCK GLACIAR WHITE", "precio": 80000, "stock": 8, "plataforma": "PS4"},
     {"id":114, "imagen": "https://www.soscomputacion.com.ar/25282-home_default/joystick-original-inalambrico-ps5-sony-playstation-dualsense-starlight-blue.jpg", "nombre":"DUALSHOCK STARLIGHT BLUE", "precio": 80000, "stock": 8, "plataforma": "PS5"},
     {"id":115, "imagen": "https://www.sdpnoticias.com/resizer/K6HVZ9bgU2Z7GNj4ajE0gMMFrDQ=/arc-photo-sdpnoticias/arc2-prod/public/CO5ACKGVQ5FMHP222XXYJ7G7LI.jpg", "nombre":"PLAYSTATION 5 SPIDERMAN 2 LIMITED EDITION", "precio": 1000000, "stock": 3, "plataforma": "PS5"}
-    
 ]
