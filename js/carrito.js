@@ -114,10 +114,6 @@ const dibujarFooter = () => {
         <td>${generarTotales().cantidadTotal}</td>
         <td></td>
         <td>${generarTotales().costoTotal}</td>
-        
-        <button class="btn btn-primary">Comprar</button>
-        <td></td>
-        <button class="btn btn-danger">Cancelar</button>
         `
 
         footCarrito.append(footer)
