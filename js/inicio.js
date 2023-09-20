@@ -58,7 +58,7 @@ export const generarCardsProductos = (productosDestacados) => {
                 <h5 class="card-title">${nombre}</h5>
                 <p class="card-text">${plataforma}</p>
                 <p class="card-text">$${precio}</p>
-                <button id="comprar${id}" class="btn btn-primary">Agregar al carrito</button>
+                <button id="comprar${id}" class="btn btn-primary">Comprar</button>
 
                 ${
                     usuarioLogeado?.admin === true ? `<button id="eliminar${id}" class="btn btn-danger">Eliminar</button>` : ""
